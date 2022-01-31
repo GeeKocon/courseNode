@@ -14,8 +14,8 @@ const forecast = (latitude,longitude, callback) => {
 
             const temperature = body.current.temperature;
             const windSpeed = body.current.wind_speed;
-
-            callback(undefined, 'It is currently ' + temperature + ' degrees out. There is a ' + windSpeed + ' wind speed.')
+            const weatherDescription = body.current.weather_descriptions[0]
+            callback(undefined, 'It is currently ' + temperature + ' degrees out. There is a ' + windSpeed + ' wind speed. \n' + weatherDescription)
         }
     })
 }
